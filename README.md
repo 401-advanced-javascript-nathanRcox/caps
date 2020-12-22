@@ -6,12 +6,12 @@
 
 ### Contributors
 
-- Classmates: N/A
+- Classmates: Dina Ayoub, Simon Panek
 - Code Fellows TAs: N/A
 
 ### Links and Resources
 
-- [CI/CD]()
+- [CI/CD](https://github.com/401-advanced-javascript-nathanRcox/caps/actions)
 <!-- - [Back-end Server URL](http://xyz.com) (when applicable) -->
 - [Front-end Application]() N/A
 
@@ -35,4 +35,3 @@
 
 #### UML
 ![UML](./assests/UML-lab11.png)
-
