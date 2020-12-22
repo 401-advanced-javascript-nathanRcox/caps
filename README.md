@@ -34,4 +34,4 @@
 - Describe any tests that you did not complete, that skipped, and etc: All the tests apart from the console.log of the thankYou function on vendors because, ostensibly, it's alone, while the others have emits and whatnot in them(?).
 
 #### UML
-![UML](assests/UML-lab11.png)
+![UML](./assests/UML-lab11.png)
