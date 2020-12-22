@@ -1,8 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-const events = require("../events");
-
+const events = require('../events');
 const faker = require('faker');
 
 // (1) Declare your store name (perhaps in a dotenv file, so that this module is re-usable).
@@ -29,5 +28,4 @@ const thankYou = (payload) => {
 // (5) Monitor the system for events:
 events.on('delivered-message', thankYou);
 
-
-module.exports = setInterval;
+module.exports = { setInterval };
