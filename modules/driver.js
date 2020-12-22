@@ -6,15 +6,14 @@ const events = require("../events");
 const confirmation = (payload) => {
   setTimeout(() => {
     console.log(`Driver: picked up order No.: ${payload.orderId}.`)
-    // (3) Emit an ‘in-transit’ event with the payload you received.
 
+    // (3) Emit an ‘in-transit’ event with the payload you received.
     events.emit('in-transit', payload);
   }, 1000);
     
   // (4) Wait 3 seconds, then log “delivered” to the console.
   setTimeout(() => {
     console.log(`DRIVER: Delivered order No. ${payload.orderId}`);
-
     // (5) Emit a ‘delivered’ event with the same payload.
     events.emit('delivered', payload);
   }, 3000);
