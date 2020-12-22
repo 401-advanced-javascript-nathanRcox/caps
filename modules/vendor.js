@@ -13,8 +13,8 @@ const STORE = process.env.STORE;
 setInterval(() => {
   let order = { 
     storeName: STORE, 
-    orderId: `${faker.random.uuid()}`, 
-    customerName: `${faker.name.findName()}`, 
+    orderId: faker.random.uuid(),
+    customerName: faker.name.findName(),
     address: `${faker.address.city()}, ${faker.address.state()}` 
   }
   events.emit('order-received', order); // Emits to caps.

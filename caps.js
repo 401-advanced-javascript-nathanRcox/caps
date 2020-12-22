@@ -15,7 +15,7 @@ events.on('order-received', (payload) => {
 });
 
 events.on('in-transit', (payload) => {
-  console.log('EVENT', { event: 'in-transit', time: new Date(), payload });
+  console.log('EVENT', { event: 'in-transit', time: new Date().toString, payload });
 });
 
 events.on('delivered', (payload) => {
@@ -23,3 +23,14 @@ events.on('delivered', (payload) => {
   console.log('EVENT', { event: 'delivered', time: new Date(), payload });
   console.log('/////////////////////End Transaction///////////////////');
 });
+
+///////////Refactoring per class 12 code reivew//////////
+
+// events.on('pickup', (payload) => logEvent('pickup', payload));
+// events.on('in-transit', (payload) => logEvent('in-transit', payload));
+// events.on('delivered', (payload) => logEvent('delivered', payload));
+
+// function logEvent(event, payload) {
+//   const time = new Date().toString();
+//   console.log('EVENT', { event, time, payload });
+// }
