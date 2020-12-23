@@ -5,31 +5,33 @@ require('dotenv').config();
 const io = require('socket.io-client');
 const faker = require('faker');
 
-const host = 'http://localhost:3001';
-const brainConnection = io.connect(host);
-const capsVendor = io.connect(`${host}/caps-namespace`);
+const capsVendor = io.connect('http://localhost:3000/caps-namespace');
+// const capsVendor = io.connect(`${host}/caps-namespace`);
+// const capsVendor = io.connect('https://localhost:3000/caps-namespace');
+
 console.log('Connected to the caps namespace.')
 
 // (1) Declare your store name (perhaps in a dotenv file, so that this module is re-usable).
-const store = process.env.STORE;
+const store = process.env.STORE || 'Ye Ol\' Russian Books';
 
 capsVendor.emit('join', store);
 
 setInterval(() => {
   let order = { 
-    storeName: store, 
+    storeName: store,
     orderId: faker.random.uuid(),
     customerName: faker.name.findName(),
-    address: `${faker.address.city()}, ${faker.address.state()}` 
+    address: `${faker.address.streetAddress(true)}, ${faker.address.city()}, ${faker.address.state()}` 
   }
   capsVendor.emit('pickup', order); // Emits to caps.
 }, 5000); 
 
-// capsVendor.on('in-transit-message', intransitHandler);
+// to join a room in a namespace: emit 'join' with the name of the room.
+capsVendor.emit('join', store);
 
-// function intransitHandler(payload) {
-//   console.log(`${payload.orderId} is on its way.`);
-// }
+capsVendor.on('in-transit', (payload) => {
+  console.log(`DRIVER to VENDOR: Order No. ${payload.orderId} is now in transit.`)
+})
 
 // (6) Whenever the ‘delivered’ event occurs, log “thank you” to the console.
 const thankYou = (payload) => {

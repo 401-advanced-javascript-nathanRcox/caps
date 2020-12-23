@@ -3,8 +3,8 @@
 // const events = require("../../events");
 
 const io = require('socket.io-client');
-const host = 'http://localhost:3001';
-const capsVendor = io.connect(`${host}/caps-namespace`);
+const capsVendor = io.connect('http://localhost:3000/caps-namespace');
+// const capsVendor = io.connect(`${host}/caps-namespace`);
 console.log('Connected to the caps namespace.')
 
 // (1) Monitor the system for events. 
