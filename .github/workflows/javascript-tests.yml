@@ -20,6 +20,11 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm i
+        cd apps/vendors
+        npm i
+        cd ../drivers
+        npm i
+        cd ../..
         npm test
       env:
         CI: true
