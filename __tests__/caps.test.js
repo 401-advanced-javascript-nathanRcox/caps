@@ -1,6 +1,6 @@
 'use strict';
 
-const events = require('../events');
+// const events = require('../events');
 const caps = require('../caps');
 
 describe('caps console logs', () => { 
@@ -13,20 +13,26 @@ describe('caps console logs', () => {
     consoleSpy.mockRestore();
   });
 
-  it ('logs the payload after order-received', () => {
-    events.emit('order-received', { orderId: 1 });
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+  it ('logs the connection', () => {
+    caps.on('connection', (socket) => {
+      expect(consoleSpy).toHaveBeenCalled();
+    })
+  })
 
-  it ('logs the payload after in-transit', () => {
-    events.emit('in-transit', { orderId: 1 });
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+  // it ('logs the payload after order-received', () => {
+  //   caps.on( { orderId: 1 });
+  //   expect(consoleSpy).toHaveBeenCalled();
+  // });
 
-  it ('logs the payload after delivered', () => {
-    events.emit('delivered', { orderId: 1 });
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+  // it ('logs the payload after in-transit', () => {
+  //   events.emit('in-transit', { orderId: 1 });
+  //   expect(consoleSpy).toHaveBeenCalled();
+  // });
+
+  // it ('logs the payload after delivered', () => {
+  //   events.emit('delivered', { orderId: 1 });
+  //   expect(consoleSpy).toHaveBeenCalled();
+  // });
 
 
 })

@@ -2,7 +2,7 @@
   "name": "caps",
   "version": "1.0.0",
   "description": "## Project: Event Driven Applications",
-  "main": "caps.js",
+  "main": "vendor.js",
   "scripts": {
     "test": "jest --watchAll --coverage"
   },
