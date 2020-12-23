@@ -6,7 +6,7 @@
 
 ### Contributors
 
-- Classmates: Dina Ayoub, Simon Panek
+- Classmates: Simon Panek, Tina Myers, Mariko Alvarado
 - Code Fellows TAs: N/A
 
 ### Links and Resources
@@ -30,8 +30,8 @@
 #### Tests
 
 - How do you run tests?: npm test from the root of caps.
-- Any tests of note?: Only one test works; the consoleSpy is not working.
-- Describe any tests that you did not complete, that skipped, and etc: All the tests apart from the console.log of the thankYou function on vendors because, ostensibly, it's alone, while the others have emits and whatnot in them(?).
+- Any tests of note?: All tests pass, except for caps, because I don't know how to export it.
+- Describe any tests that you did not complete, that skipped, and etc: I don't really understand the utility of the consoleSpy tests, but they're all passing. Thing is, I'm having a problem with the github build of my tests, which just hangs and hangs without resolving.
 
 #### UML
 ![UML](./assests/UML-lab11.png)
