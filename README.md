@@ -1,6 +1,6 @@
-# LAB - Class 11
+# LAB - Class 10, 11, 12
 
-## Project: Event Driven Applications
+## Project: Event-driven Application
 
 ### Author: Nathan Cox
 
@@ -19,7 +19,8 @@
 
 #### .env requirements (where applicable)
 
-- STORE=Ye Old Russian Books
+- STORE=Ye Ol' Russian Books
+- PORT=3000
 
 #### How to initialize/run your application (where applicable)
 
