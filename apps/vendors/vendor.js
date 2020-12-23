@@ -12,13 +12,13 @@ const capsVendor = io.connect('http://localhost:3000/caps-namespace');
 console.log('Connected to the caps namespace.')
 
 // (1) Declare your store name (perhaps in a dotenv file, so that this module is re-usable).
-const store = process.env.STORE;
+const store = process.env.STORE || 'Ye Ol\' Russian Books';
 
 capsVendor.emit('join', store);
 
 setInterval(() => {
   let order = { 
-    storeName: store, 
+    storeName: store,
     orderId: faker.random.uuid(),
     customerName: faker.name.findName(),
     address: `${faker.address.streetAddress(true)}, ${faker.address.city()}, ${faker.address.state()}` 
