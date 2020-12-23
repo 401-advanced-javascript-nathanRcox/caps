@@ -7,3 +7,4 @@ const Events = require('events'); // This is a native 'library' within node.js.
 const events = new Events(); // Make only one instance of this in the app. 
 
 module.exports = events;
+

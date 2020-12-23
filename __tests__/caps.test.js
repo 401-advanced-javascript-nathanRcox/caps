@@ -1,7 +1,8 @@
 'use strict';
 
 // const events = require('../events');
-const caps = require('../caps');
+const logger = require('../apps/logger');
+const faker = require('faker');
 
 describe('caps console logs', () => { 
   let consoleSpy;
@@ -9,12 +10,19 @@ describe('caps console logs', () => {
     consoleSpy = jest.spyOn(console, 'log').mockImplementation();
   });
   
+  let order = { 
+    storeName: 'Ye Ol\' Russian Books', 
+    orderId: faker.random.uuid(),
+    customerName: faker.name.findName(),
+    address: `${faker.address.streetAddress(true)}, ${faker.address.city()}, ${faker.address.state()}` 
+  }
+    
   afterEach(() => {
     consoleSpy.mockRestore();
   });
 
   it ('logs the connection', () => {
-    caps.on('connection', (socket) => {
+    logger( { order } );
       expect(consoleSpy).toHaveBeenCalled();
     })
   })
@@ -35,4 +43,3 @@ describe('caps console logs', () => {
   // });
 
 
-})
