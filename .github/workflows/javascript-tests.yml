@@ -26,6 +26,5 @@ jobs:
         npm i
         cd ../..
         npm test
-        q
       env:
         CI: true
