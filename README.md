@@ -1,4 +1,4 @@
-# LAB - Class 10, 11, 12
+# LAB - Class 10, 11, 12, 13
 
 ## Project: Event-driven Application
 
@@ -19,7 +19,7 @@
 
 #### .env requirements (where applicable)
 
-- STORE=Ye Ol' Russian Books
+- STORE=Ye Old Russian Books
 - PORT=3000
 
 #### How to initialize/run your application (where applicable)
@@ -30,9 +30,9 @@
 
 #### Tests
 
-- How do you run tests?: npm test from the root of caps.
-- Any tests of note?: All tests pass, except for caps, because I don't know how to export it.
-- Describe any tests that you did not complete, that skipped, and etc: I don't really understand the utility of the consoleSpy tests, but they're all passing. Thing is, I'm having a problem with the github build of my tests, which just hangs and hangs without resolving.
+- How do you run tests?: extant tests are now obsolete as of failed attempts to refactor using queues as of lab 13.
+- Any tests of note?: All tests used to pass, until the refactoring for message queueing for lab 13.
+- Describe any tests that you did not complete, that skipped, and etc: All of them, for now. Let's hope I'll get back to this app after the demo.
 
 #### UML
 ![UML](./assests/UML-lab11.png)
